@@ -2,6 +2,8 @@
 title: Customize the Favicon
 date: 2023-07-10 10:43:00 -0500
 categories: [Design Patterns, Creational]
+math: true
+mermaid: true
 ---
 
 Creational design patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code.
@@ -33,15 +35,63 @@ This is an example of `Inline Code`. And here is another `Casa azul`.
 ## Mermaid SVG
 
 ```mermaid
-graph TD
-A[Client] -->|tcp_123| B(Load Balancer)
-B -->|tcp_456| C[Server1] 
-B -->|tcp_456| D[Server2]
+%%{init: {'theme':'neutral'}}%%
+classDiagram
+    note "From Duck till Zebra"
+    Animal <|-- Duck
+    note for Duck "can fly\ncan swim\ncan dive\ncan help in debugging"
+    Animal <|-- Fish
+    Animal <|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal: +isMammal()
+    Animal: +mate()
+    class Duck{
+        +String beakColor
+        +swim()
+        +quack()
+    }
+    class Fish{
+        -int sizeInFeet
+        -canEat()
+    }
+    class Zebra{
+        +bool is_wild
+        +run()
+    }
+```
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+classDiagram
+    note "From Duck till Zebra"
+    Animal <|-- Duck
+    note for Duck "can fly\ncan swim\ncan dive\ncan help in debugging"
+    Animal <|-- Fish
+    Animal <|-- Zebra
+    Animal : +int age
+    Animal : +String gender
+    Animal: +isMammal()
+    Animal: +mate()
+    class Duck{
+        +String beakColor
+        +swim()
+        +quack()
+    }
+    class Fish{
+        -int sizeInFeet
+        -canEat()
+    }
+    class Zebra{
+        +bool is_wild
+        +run()
+    }
 ```
 
 ## Mermaid SVG
 
 ```mermaid
+%%{init: {'theme':'forest'}}%%
  gantt
   title  Adding GANTT diagram functionality to mermaid
   apple :a, 2017-07-20, 1w
