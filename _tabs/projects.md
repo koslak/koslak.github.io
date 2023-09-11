@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-icon: fas fa-wrench
+icon: fas fa-briefcase
 order: 1
 ---
 
