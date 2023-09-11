@@ -4,6 +4,7 @@ date: 2023-07-10 10:43:00 -0500
 categories: [Design Patterns, Creational]
 math: true
 mermaid: true
+pin: true
 ---
 
 Creational design patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code.
