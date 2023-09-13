@@ -46,7 +46,7 @@ Encapsulation hides implementation details and internal state from other compone
 Polymorphism defines different types of components that share a common interface and behavior but have different implementations.
 
 ## Unified Modeling Language (UML)
-It's a general-purpose visual modeling language that is intended to provide a standard way to visualize the design of a system[^fn-nth-2]. A relationship is a general term covering the specific types of logical connections found on class and object diagrams[^fn-nth-3], [^fn-nth-4].
+It's a general-purpose visual modeling language that is intended to provide a standard way to visualize the design of a system[^fn-nth-2]. A relationship is a general term covering the specific types of logical connections found on class and object diagrams[^fn-nth-3].
 
 ### Inheritance
 Refers to the ability of one class (Derived class) to inherit the identical functionality of another class (Base class), and then add new functionality of its own.
@@ -110,6 +110,5 @@ direction LR
 [^footnote]: Klaus Iglberger, *C++ Software Design*, 1st ed. (O'Reilly, 2022)  
 [^fn-nth-2]: [Unified Modeling Language](https://en.wikipedia.org/wiki/Unified_Modeling_Language){:target="_blank"}
 [^fn-nth-3]: [The UML 2 class diagram](https://developer.ibm.com/articles/the-class-diagram/){:target="_blank"}
-[^fn-nth-4]: [UML](http://www.cs.utsa.edu/~cs3443/uml/uml.html){:target="_blank"}
 [^fn-nth-5]: [How do you design and test your objects for low coupling and high cohesion?](https://www.linkedin.com/advice/0/how-do-you-design-test-your-objects-low-coupling){:target="_blank"}
 
