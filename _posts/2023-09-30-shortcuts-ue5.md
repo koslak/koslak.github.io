@@ -17,14 +17,16 @@ tags: [server, example]
 | Pivot Object           | Mouse Left (Hold) + Alt                 |
 | Zoom In and Out Object | Mouse Right (Hold) + Alt                |
 
-| Name              | Shortcut     | Note       |
-| ----------------- | ------------ | ---------- |
-| Translate Objects | W            |            |
-| Rotate Objects    | E            |            |
-| Scale Objects     | R            |            |
-| Duplicate Object  | Ctrl + D     | Alt + Drag |
-| Lock Camera       | Shift + Drag |
-| Snap to floor     | End          |
+| Name                       | Shortcut                                                                                                     | Note       |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------- |
+| Translate Objects          | W                                                                                                            |            |
+| Rotate Objects             | E                                                                                                            |            |
+| Scale Objects              | R                                                                                                            |            |
+| Duplicate Object           | Ctrl + D                                                                                                     | Alt + Drag |
+| Lock Camera                | Shift + Drag                                                                                                 |
+| Snap to floor              | End                                                                                                          |
+| Change Asset Axis Location | Select small axis circle with Middle Mouse button, move mouse, then press Alt + V to select vertex and snap. |
+| Snap to Vertex             | Select small axis circle with Middle Mouse button, move mouse, then press V and move.                        |
 
 | Name       | Shortcut | Note |
 | ---------- | -------- | ---- |
@@ -49,9 +51,14 @@ tags: [server, example]
 | Left        | Alt + K         |      |
 | Right       | Alt + Shift + K |      |
 
-# Open Asset 
+# Asset 
 
-| Name                | Shortcut | Note |
-| ------------------- | -------- | ---- |
-| Open Asset (Search) | Ctrl + P |      |
-| Open Asset Window   | Ctrl + E |      |
+| Name                    | Shortcut | Note |
+| ----------------------- | -------- | ---- |
+| Open Asset (Search)     | Ctrl + P |      |
+| Open Asset Window       | Ctrl + E |      |
+| Find out Asset location | Ctrl + B |      |
+
+# Disable Slate Tooltip
+
+Run the following Console Command: ```Slate.TooltipSummonDelay 60```

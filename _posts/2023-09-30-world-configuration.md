@@ -5,8 +5,6 @@ categories: [Unreal Engine, General Topics]
 tags: [server, example]
 ---
 
-# World Configuration
-
 ## Add a Post Process Volume Object
 
 ```PostProcessVolume -> Post Process Volume Settings -> Infinite Extent (Unbound)```
