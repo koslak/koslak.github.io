@@ -1,6 +1,6 @@
 ---
 title: Linear Algebra - Equation & Matrix
-date: 2023-10-01 10:00:00 -0500
+date: 2024-02-29 10:00:00 -0500
 categories: [Machine Learning, Math]
 math: true
 ---
@@ -154,7 +154,7 @@ $$
      \end{array} \right]
      \begin{array}{l}
         R_1 \\
-        R_2 \to 2 * R_1
+        R_2 \to 2R_1
      \end{array}
 $$
 
@@ -191,18 +191,130 @@ $$
 \end{align*}
 $$
 
-> A system that has a linear `dependence` is a `singular` system.
+> A system that has a linear `dependence` is a `singular` system. \\
 A system that has a linear `independence` is a `non-singular` system.
 {: .prompt-info }
 
 Calculating the linear dependency of a system can be complex, but there is an easier way using the concept of `Determinant`.
 
+## The Determinant
 
+For the following matrix:
 
+$$
+\left[ \begin{array}{cc}
+       a_{11} & a_{12} \\
+       a_{21} & a_{22} \\
+     \end{array} \right]
+$$
 
+The Determinant is defined as:
 
+$$
+det A = \begin{vmatrix} A \end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}
+$$
 
+Example:
 
+$$
+\begin{vmatrix} A \end{vmatrix} = 
+\begin{vmatrix} 
+1 & 1 \\
+1 & 2 \\
+\end{vmatrix} = 
+\text{= 1} \cdot\text{2} - \text{1}\cdot\text{1 = 1}
+$$
+
+For a 3x3 matrix, the determinant is calculated like this:
+
+$$
+A = \begin{bmatrix}
+   a_{11} & a_{12} & a_{13} \\
+   a_{21} & a_{22} & a_{23} \\
+   a_{31} & a_{32} & a_{33}
+\end{bmatrix}
+$$
+
+$$
+\\
+det A = |A| = a_{11}\begin{vmatrix}
+   a_{22} & a_{23} \\
+   a_{32} & a_{33}
+\end{vmatrix} - 
+a_{12}\begin{vmatrix}
+   a_{21} & a_{23} \\
+   a_{31} & a_{33}
+\end{vmatrix} +
+a_{13}\begin{vmatrix}
+   a_{21} & a_{22} \\
+   a_{31} & a_{32}
+\end{vmatrix}
+$$
+
+Example:
+
+$$
+A = \begin{bmatrix}
+   3 & 5 & 2 \\
+   4 & 2 & 3 \\
+   -1 & 2 & 4
+\end{bmatrix}
+$$
+
+$$
+\\
+|A| = \begin{vmatrix}
+   3 & 5 & 2 \\
+   4 & 2 & 3 \\
+   -1 & 2 & 4
+\end{vmatrix} =
+3\begin{vmatrix}
+   2 & 3 \\
+   2 & 4
+\end{vmatrix} - 
+5\begin{vmatrix}
+   4 & 3 \\
+   -1 & 4
+\end{vmatrix} +
+2\begin{vmatrix}
+   4 & 2 \\
+   -1 & 2
+\end{vmatrix}
+$$
+
+$$
+\\
+|A| = 3 \cdot 2 - 5 \cdot 19 + 2 \cdot 10 = -69
+$$
+
+## Singularity based on the Determinant
+
+$$
+\text{System is}\begin{cases}
+   \text{Non-singular} &\text{if detA} \neq {0} \\
+   \text{Singular} &\text{if detA = 0}
+\end{cases}
+$$
+
+Examples:
+
+$$
+A = \begin{bmatrix}
+   1 & 1 \\
+   1 & 2
+\end{bmatrix}\to\text{|A| = 1} \cdot\text{2} - \text{1}\cdot\text{1 = 1}\to \color{#0000FF}\text{Non-singular}
+$$
+
+$$
+\\
+B=\begin{bmatrix}
+   1 & 1 \\
+   2 & 2
+\end{bmatrix}\to\text{|B| = 1} \cdot\text{2} - \text{1}\cdot\text{2 = 0}\to \color{#0000FF}\text{Singular}
+$$
+
+> To summarize, the determinant of a matrix is `0` precisely when the matrix is `singular` and `non 0` when the matrix is `non-singular`.
+{: .prompt-info }
 
 
 
