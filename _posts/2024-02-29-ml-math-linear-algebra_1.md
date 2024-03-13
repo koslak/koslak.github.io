@@ -316,6 +316,131 @@ $$
 > To summarize, the determinant of a matrix is `0` precisely when the matrix is `singular` and `non 0` when the matrix is `non-singular`.
 {: .prompt-info }
 
+## Triangular Matrix
+
+A triangular matrix is a special kind of square matrix. A square matrix is called `lower triangular` if all the entries above the main diagonal are zero. 
+Similarly, a square matrix is called `upper triangular` if all the entries below the main diagonal are zero.
+
+$$
+A = \begin{bmatrix}
+   3 & 5 & 2 & 1 \\
+   0 & 2 & 3 & 9 \\
+   0 & 0 & 4 & 7 \\
+   0 & 0 & 0 & 6 \\ 
+\end{bmatrix}
+$$
+
+### Determinant of a Triangular Matrix
+
+$$
+det A = a_{11} \cdot a_{22} \cdot a_{33} \cdot\cdot\cdot a_{nn} 
+$$
+
+#### Example:
+
+$$
+\\
+|A| = \begin{vmatrix}
+   3 & 0 & 0 \\
+   4 & 2 & 0 \\
+   -1 & 2 & 4
+\end{vmatrix} = 3 \cdot 2 \cdot 4 = 24
+$$
+
+## Determinant: Multiplication and Inverse of a Matrix
+
+Two square matrices $$A$$ and $$B$$ then:
+
+$$ det AB = det A \cdot det B $$
+
+Also, if $$A$$ is invertible, then:
+
+$$ det A^{-1} = \frac{1}{det A} $$
+
+## Equation System and Unique Solution
+
+Consider the following system of $$n$$ equations and $$n$$ variables:
+
+$$
+\begin{align*}
+a_{11}x_{1} + a_{12}x_{2} + \cdot\cdot\cdot + a_{1n}x_{n} = b_1 \\
+a_{21}x_{1} + a_{22}x_{2} + \cdot\cdot\cdot + a_{2n}x_{n} = b_2 \\
+\cdot\cdot\cdot \\
+a_{n1}x_{1} + a_{n2}x_{2} + \cdot\cdot\cdot + a_{nn}x_{n} = b_n \\
+\end{align*}
+$$
+
+That can be written in the following form:
+
+$$
+A\mathbf{x} = \mathbf{b}
+$$
+
+Si $$det A \neq 0$$, then the system has a unique solution and it's given by:
+
+$$\mathbf{x} = A^{-1}\mathbf{b}$$
+
+> Si $$det A \neq 0$$, then the system has a unique solution 
+{: .prompt-info }
+
+#### Example:
+
+$$
+\begin{align*}
+2x_1 + 4x_2 + 6x_3 = 18 \\
+4x_1 + 5x_2 + 6x_3 = 24 \\
+3x_1 + x_2 - 2x_3 = 4
+\end{align*}
+$$
+
+Can be written as 
+
+$$
+A\mathbf{x} = \mathbf{b}
+$$
+ 
+with 
+
+$$
+A =  
+\begin{bmatrix}
+   2 & 4 & 6 \\
+   4 & 5 & 6 \\
+   3 & 1 & -2
+\end{bmatrix},
+
+\mathbf{x} =  
+\begin{bmatrix}
+   x_1 \\
+   x_2 \\
+   x_3
+\end{bmatrix},
+
+\mathbf{b} =  
+\begin{bmatrix}
+   18 \\
+   24 \\
+   4
+\end{bmatrix}
+$$
+
+If we calculate $$det A$$ we got:
+
+$$
+\\
+|A| = \begin{vmatrix}
+   2 & 4 & 6 \\
+   4 & 5 & 6 \\
+   3 & 1 & -2
+\end{vmatrix} = 6 \neq 0 
+$$
+
+which means this system has a unique solution.
+
+
+
+
+
 
 
 
