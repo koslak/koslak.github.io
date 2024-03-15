@@ -1,5 +1,5 @@
 ---
-title: Linear Algebra - Equation & Matrix
+title: Linear Algebra - Equations & Determinant
 date: 2024-02-29 10:00:00 -0500
 categories: [Machine Learning, Math]
 math: true
