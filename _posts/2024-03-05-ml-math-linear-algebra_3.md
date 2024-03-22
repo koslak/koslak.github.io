@@ -102,72 +102,199 @@ C =
 \end{array}\right] 
 $$
 
-#### Row Operations
+### Cofactor
 
-1. Multiply or divide all entries in a row by a non-zero constant. 
-1. Replace one row by the sum of itself and a multiple of another row.
-3. Interchange two rows.
-
-
-### Echelon Form
-The following matrices are in echelon form. The leading entries ($$\triangle$$) may have any nonzero value; 
-the starred entries ($$*$$) may have any value (including zero).
+Let $$A$$ be an $$n \times\ n$$ matrix. The $$ijth$$ cofactor of $$A$$, denoted $$A_{ij}$$, is given by
 
 $$
-\left[ \begin{array}{ccc|c}
-       \triangle & * & * & * \\
-       0 & \triangle & * & * \\
-       0 & 0 & 0 & 0 \\
-     \end{array} \right]
-     \begin{array}{l}
-        R_1 \\
-        R_2 \\
-        R_3 
-     \end{array}
+A_{ij} = (-1)^{i+j}\times|M_{ij}|
 $$
 
-$$
-\left[ \begin{array}{ccccc|c}
-       0 & \triangle & * & * & * \\
-       0 & 0 & 0 & \triangle & * \\
-       0 & 0 & 0 & 0 & \triangle  \\
-     \end{array} \right]
-     \begin{array}{l}
-        R_1 \\
-        R_2 \\
-        R_3 
-     \end{array}
-$$
+#### Example
 
-> The places where there is a triangle, it's called a `pivot point`. The 
-column where there is a pivot point is called a `pivot column`.
-{: .prompt-info }
-
-### Reduced Echelon Form
-The following matrices are in reduced echelon form.
+Calculate $$A_{32}$$ for the following matrix:
 
 $$
-\left[ \begin{array}{ccc|c}
-       1 & * & * & * \\
-       0 & 1 & * & * \\
-       0 & 0 & 0 & 0 \\
-     \end{array} \right]
-     \begin{array}{l}
-        R_1 \\
-        R_2 \\
-        R_3 
-     \end{array}
+A = \left[\begin{array}{cccc}
+   1 & -3 & 5 & 6  \\
+   2 & 4 & 0 & 3  \\
+   1 & 5 & 9 & -2  \\
+   4 & 0 & 2 & 7  \\
+\end{array}\right] \\
+\\
+$$
+
+The formula says:
+
+$$
+A_{32} = (-1)^{3+2}\times|M_{32}| 
+$$
+
+This means we need to calculate 
+$$
+|M_{32}|
+$$
+:
+
+$$
+\\
+|M_{32}| = \begin{vmatrix}
+   1 & 5 & 6  \\
+   2 & 0 & 3  \\
+   4 & 2 & 7  \\
+\end{vmatrix} = 8
+$$
+
+
+
+$$
+A_{32} = (-1)^{3+2}\times|M_{32}| = (-1)^5\times8 \\
 $$
 
 $$
-\left[ \begin{array}{ccccc|c}
-       0 & 1 & * & * & * \\
-       0 & 0 & 0 & 1 & * \\
-       0 & 0 & 0 & 0 & 1  \\
-     \end{array} \right]
-     \begin{array}{l}
-        R_1 \\
-        R_2 \\
-        R_3 
-     \end{array}
+A_{32} = -8
+$$
+
+### Adjugate matrix (or adjoint of a matrix)
+
+The adjoint of a square matrix $$A$$ is the transpose of its cofactor matrix.
+
+#### Example:
+
+For the following matrix:
+$$
+A = \left[\begin{array}{ccc}
+   2 & 4 & 3  \\
+   0 & 1 & -1  \\
+   3 & 5 & 7  \\
+\end{array}\right] \\
+$$
+
+Calculate $$adj A$$. First we calculate the cofactor matrix:
+
+$$
+A = \left[\begin{array}{ccc}
+   A_{11} & A_{12} & A_{13}  \\
+   A_{21} & A_{22} & A_{23}  \\
+   A_{31} & A_{32} & A_{33}  \\
+\end{array}\right] \\
+$$
+
+$$
+\\
+|A_{11}| = \begin{vmatrix}
+   1 & -1 \\
+   5 & 7 \\
+\end{vmatrix} = 12
+
+\qquad|A_{12}| = - \begin{vmatrix}
+   0 & -1 \\
+   3 & 7 \\
+\end{vmatrix} = -3
+
+\qquad|A_{13}| = \begin{vmatrix}
+   0 & 1 \\
+   3 & 5 \\
+\end{vmatrix} = -3
+
+$$
+
+$$
+
+|A_{21}| = -\begin{vmatrix}
+   4 & 3 \\
+   5 & 7 \\
+\end{vmatrix} = -13
+
+\qquad|A_{22}| = \begin{vmatrix}
+   2 & 3 \\
+   3 & 7 \\
+\end{vmatrix} = 5
+
+\qquad|A_{23}| = - \begin{vmatrix}
+   2 & 4 \\
+   3 & 5 \\
+\end{vmatrix} = 2
+
+$$
+
+$$
+
+|A_{31}| = \begin{vmatrix}
+   4 & 3 \\
+   1 & -1 \\
+\end{vmatrix} = -7
+
+\qquad|A_{32}| = - \begin{vmatrix}
+   2 & 3 \\
+   0 & -1 \\
+\end{vmatrix} = 2
+
+\qquad|A_{33}| = \begin{vmatrix}
+   2 & 4 \\
+   0 & 1 \\
+\end{vmatrix} = 2
+$$
+
+With these values we calculate $$adj A$$:
+
+$$
+adj A = \left[\begin{array}{ccc}
+   A_{11} & A_{21} & A_{31}  \\
+   A_{12} & A_{22} & A_{32}  \\
+   A_{13} & A_{23} & A_{33}  \\
+\end{array}\right] =
+
+\left[\begin{array}{ccc}
+   12 &  -13 & -7  \\
+   -3 & 5  & 2  \\
+   -3 & 2 & 2  \\
+\end{array}\right]
+$$
+
+### Inverse of a Matrix
+
+$$
+A^{-1} = \frac{1}{det A} \cdot adj A
+$$
+
+#### Example
+
+For the following matrix:
+$$
+A = \left[\begin{array}{ccc}
+   2 & 4 & 3  \\
+   0 & 1 & -1  \\
+   3 & 5 & 7  \\
+\end{array}\right] \\
+$$
+
+Determine whether $$A$$ is invertible and calculate $$A^-1$$ if exists.
+
+$$det A = 3 \neq 0$$
+
+This means $$A$$ is invertible. From the previous section, we now $$adj A$$:
+
+$$
+adj A = \left[\begin{array}{ccc}
+   12 &  -13 & -7  \\
+   -3 & 5  & 2  \\
+   -3 & 2 & 2  \\
+\end{array}\right]
+$$
+
+This means:
+
+$$
+A^{-1} = \frac{1}{3}\times
+\left[\begin{array}{ccc}
+   12 &  -13 & -7  \\
+   -3 & 5  & 2  \\
+   -3 & 2 & 2  \\
+\end{array}\right] =
+\left[\begin{array}{ccc}
+   4 &  \frac{-13}{3} & \frac{-7}{3}  \\
+   -1 & \frac{5}{3}  & \frac{2}{3}  \\
+   -1 & \frac{2}{3} & \frac{2}{3} \\
+\end{array}\right]
 $$
